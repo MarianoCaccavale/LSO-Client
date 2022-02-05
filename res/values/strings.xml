@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PotholeClient</string>
+    <string name="stop">STOP</string>
+    <string name="start">START</string>
+    <string name="stop_calibration">Stop calibration</string>
+    <string name="start_calibration">Start Calibration</string>
+    <string name="greeting_message">Benvenuto!\nInserisci un nickname per iniziare a registrare le buche</string>
+    <string name="nickname_hint">XxPotholesSlayerxX</string>
+    <string name="login">Accedi</string>
+    <string name="logout">Esci</string>
+    <string name="register_potholes">Registra buche</string>
+    <string name="get_potholes">Lista buche</string>
+    <string name="what_do_you_want_to_do">Cosa desideri fare?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pothole_locator">Potholes Locator</string>
+    <string name="logo">Logo</string>
+</resources>
