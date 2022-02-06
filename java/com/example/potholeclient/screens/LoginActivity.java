@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.potholeclient.R;
 import com.example.potholeclient.utils.Costants;
+import com.example.potholeclient.utils.Network;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,6 +33,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 Costants.nickname = editText.getText().toString();
+
+                Costants.tolleranceThreshold = Network.getTollerance();
+
                 Intent mainActivity = new Intent(LoginActivity.this, MenuActivity.class);
                 startActivity(mainActivity);
             }

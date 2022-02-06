@@ -18,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.potholeclient.R;
@@ -54,18 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                         try {
 
-                            //Costants.tolleranceThreshold = Network.getTollerance();
-
-                            //System.out.println("[*] Tolleranza: " + Costants.tolleranceThreshold);
-
                             Network.sendData(Costants.nickname, location.getLatitude(), location.getLongitude());
-
-                            /*LinkedList<PotholesModel> lista = Network.receiveData("Charlie", location.getLatitude(), location.getLongitude());
-
-                            for (PotholesModel pothole:
-                                    lista) {
-                                System.out.println(pothole.toString());
-                            }*/
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -76,9 +66,6 @@ public class RegisterActivity extends AppCompatActivity {
                 thread.setPriority(10);
 
                 thread.start();
-                /*if (Math.abs(location.getLatitude() - lastPotholeLocation.getLatitude()) > 0.000005 || Math.abs(location.getLongitude() - lastPotholeLocation.getLongitude()) > 0.000005) {
-                    lastPotholeLocation = location;
-                }*/
             }
         }
 
@@ -171,6 +158,9 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        TextView explanationTextView = findViewById(R.id.explanationTextView);
+        explanationTextView.setText(R.string.calibration_explanation);
+
         sManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
         linearAccelerationSensor = sManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 
@@ -189,6 +179,8 @@ public class RegisterActivity extends AppCompatActivity {
                         findViewById(R.id.stopCalibrationBTN).setVisibility(View.INVISIBLE);
                         Toast.makeText(getApplicationContext(), "Calibrazione avvenuta con successo!", Toast.LENGTH_LONG).show();
                         findViewById(R.id.startTracking).setVisibility(View.VISIBLE);
+                        TextView explanationTextView = findViewById(R.id.explanationTextView);
+                        explanationTextView.setText(R.string.registration_explanation);
                     }
                 });
             }

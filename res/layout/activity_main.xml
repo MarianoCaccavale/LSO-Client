@@ -24,6 +24,7 @@
         android:layout_width="154dp"
         android:layout_height="27dp"
         android:layout_marginTop="37dp"
+        android:textSize="20sp"
         android:gravity="center_horizontal"
         android:text="@string/pothole_locator"
         app:layout_constraintBottom_toBottomOf="parent"

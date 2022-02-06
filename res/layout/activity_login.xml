@@ -10,11 +10,12 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="305dp"
-        android:layout_height="62dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:text="@string/greeting_message"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

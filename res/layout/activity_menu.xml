@@ -9,6 +9,7 @@
     <TextView
         android:id="@+id/greetingTextView"
         android:layout_width="269dp"
+        android:textSize="20sp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:textSize="20sp"
         android:gravity="center_horizontal"
         android:text="@string/what_do_you_want_to_do"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="66dp"
+        android:textSize="15sp"
         android:text="@string/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

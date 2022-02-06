@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/getCoordinatesBTN"
-        android:layout_width="132dp"
-        android:layout_height="118dp"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
         android:background="@drawable/rounded_button"
         android:text="@string/start_calibration"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,11 +20,11 @@
 
     <Button
         android:id="@+id/stopCalibrationBTN"
-        android:visibility="invisible"
-        android:layout_width="166dp"
-        android:layout_height="49dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="31dp"
         android:text="@string/stop_calibration"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -35,8 +35,8 @@
     <Button
         android:id="@+id/startTracking"
         android:visibility="invisible"
-        android:layout_width="166dp"
-        android:layout_height="49dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="31dp"
         android:text="@string/start"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,16 +48,28 @@
 
     <Button
         android:id="@+id/stopTracking"
-        android:visibility="invisible"
-        android:layout_width="166dp"
-        android:layout_height="49dp"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
         android:layout_marginTop="31dp"
         android:text="@string/stop"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getCoordinatesBTN"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/explanationTextView"
+        android:layout_width="248dp"
+        android:layout_height="53dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/getCoordinatesBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.252" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
