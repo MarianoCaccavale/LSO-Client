@@ -21,7 +21,7 @@
     <Button
         android:id="@+id/stopCalibrationBTN"
         android:layout_width="230dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
         android:text="@string/stop_calibration"
         android:visibility="invisible"

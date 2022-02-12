@@ -15,4 +15,5 @@
     <string name="logo">Logo</string>
     <string name="calibration_explanation">Per calibrare il dispositivo inizia la calibrazione e tienilo fermo per qualche secondo</string>
     <string name="registration_explanation">Ora appoggia il dispositivo in una zona che risente delle eventuali buche e inizia a registrare</string>
+    <string name="empty_potholes_list">Non c\'è nessuna buca nella tue vicinanze</string>
 </resources>

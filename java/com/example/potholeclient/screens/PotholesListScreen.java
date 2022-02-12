@@ -7,6 +7,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -63,7 +64,7 @@ public class PotholesListScreen extends AppCompatActivity {
 
                         if (myLocation != null) {
 
-                            Thread bho = new Thread(new Runnable() {
+                            Thread getPotholes = new Thread(new Runnable() {
                                 @Override
                                 public void run() {
                                     potholesList = Network.receiveData(Costants.nickname, myLocation.getLatitude(), myLocation.getLongitude());
@@ -73,6 +74,7 @@ public class PotholesListScreen extends AppCompatActivity {
                                         runOnUiThread(new Runnable() {
                                             @Override
                                             public void run() {
+                                                findViewById(R.id.potholesListView).setVisibility(View.VISIBLE);
                                                 final ArrayAdapter<PotholesModel> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, potholesList);
 
                                                 ListView potholesListView = findViewById(R.id.potholesListView);
@@ -82,12 +84,21 @@ public class PotholesListScreen extends AppCompatActivity {
                                             }
                                         });
 
+                                    }else{
+
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                findViewById(R.id.empty_potholes_listTextView).setVisibility(View.VISIBLE);
+                                            }
+                                        });
+
                                     }
                                 }
                             });
 
-                            bho.setPriority(10);
-                            bho.start();
+                            getPotholes.setPriority(10);
+                            getPotholes.start();
                         }
                     }
                 });
@@ -109,6 +120,9 @@ public class PotholesListScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_potholes_list_screen);
+
+        findViewById(R.id.potholesListView).setVisibility(View.INVISIBLE);
+        findViewById(R.id.empty_potholes_listTextView).setVisibility(View.INVISIBLE);
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         lManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
