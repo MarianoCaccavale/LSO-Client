@@ -22,11 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.potholeclient.R;
-import com.example.potholeclient.models.PotholesModel;
 import com.example.potholeclient.utils.Costants;
 import com.example.potholeclient.utils.Network;
-
-import java.util.LinkedList;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -100,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
         @Override
         public void onSensorChanged(SensorEvent event) {
 
-            if (Math.abs((event.values[2] - calibrationValues[2])) > Costants.tolleranceThreshold) {
+            if (Math.abs((event.values[2] - calibrationValues[2])) > Costants.toleranceThreshold) {
                 Toast.makeText(getApplicationContext(), "BUCA RILEVATA", Toast.LENGTH_SHORT).show();
                 getLocation();
             }

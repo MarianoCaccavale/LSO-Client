@@ -6,6 +6,6 @@ public class Costants {
     public static int port = 9876;
 
     public static String nickname = "";
-    public static double tolleranceThreshold = 1;
+    public static double toleranceThreshold = 1;
 
 }

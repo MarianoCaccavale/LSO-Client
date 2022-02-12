@@ -34,15 +34,15 @@ public class LoginActivity extends AppCompatActivity {
 
                 Costants.nickname = editText.getText().toString();
 
-                Thread getTolleranceThread = new Thread(new Runnable() {
+                Thread getToleranceThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Costants.tolleranceThreshold = Network.getTollerance();
+                        Costants.toleranceThreshold = Network.getTolerance();
                     }
                 });
 
-                getTolleranceThread.setPriority(10);
-                getTolleranceThread.start();
+                getToleranceThread.setPriority(10);
+                getToleranceThread.start();
 
                 Intent mainActivity = new Intent(LoginActivity.this, MenuActivity.class);
                 startActivity(mainActivity);

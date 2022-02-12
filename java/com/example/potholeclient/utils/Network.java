@@ -72,10 +72,10 @@ public class Network {
         return resultList;
     }
 
-    public static double getTollerance(){
+    public static double getTolerance(){
 
-        String getTollerance = "toll";
-        String tolleranceString = "0.000000";
+        String getTolerance = "toll";
+        String toleranceString = "0.000000";
 
         try {
             Socket socket = new Socket(Costants.ip, Costants.port);
@@ -83,12 +83,12 @@ public class Network {
                     new BufferedReader(
                             new InputStreamReader(socket.getInputStream()));
 
-            socket.getOutputStream().write(getTollerance.getBytes());
+            socket.getOutputStream().write(getTolerance.getBytes());
 
             if(stdIn.ready()){
-                tolleranceString = stdIn.readLine();
-                tolleranceString = tolleranceString.replace("\u0000", "");
-                tolleranceString = tolleranceString.replace(";", "");
+                toleranceString = stdIn.readLine();
+                toleranceString = toleranceString.replace("\u0000", "");
+                toleranceString = toleranceString.replace(";", "");
             }
 
             socket.close();
@@ -97,7 +97,7 @@ public class Network {
             e.printStackTrace();
         }
 
-        return Double.parseDouble(tolleranceString);
+        return Double.parseDouble(toleranceString);
     }
 
 }
